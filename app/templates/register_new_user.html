@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/png" href="/static/images/icon.png">
+</head>
+<body>
+  {% include 'header.html' %}
+  <main>
+      <div class="vertical-align">
+          <section id="register-user">
+              <h2>Create new account</h2>
+              <form id="register-user-form">
+                <!-- Username Field -->
+                <label for="username">User first-name:</label>
+                <textarea id="user-first-name-text" name="user-first-name-text" required></textarea>
+                <!-- User last-name Field -->
+                <label for="username">User last-name:</label>
+                <textarea id="user-last-name-text" name="user-last-name-text" required></textarea>
+                <!-- Email Field -->
+                <label for="email">Email:</label>
+                <textarea id="email-text" name="email-text" required></textarea>
+                <!-- Password Field -->
+                <label for="password">Password:</label>
+                <textarea id="password-text" name="password-text" required></textarea>
+                <!-- Confirm Password Field -->
+                <label for="confirm_password">Confirm Password:</label>
+                <textarea id="confirm-password-text" name="confirm-password-text" required></textarea>
+
+                <button type="submit">Submit</button>
+              </form>
+          </section>
+      </div>
+  </main>
+  {% include 'footer.html' %}
+  <script src="/static/auth_links.js"></script>
+</body>
+</html>

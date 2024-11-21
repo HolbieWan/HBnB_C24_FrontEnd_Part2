@@ -694,6 +694,55 @@ a:active {
   background-color: var(--nav-item-link-hover);
 }
 
+/* Register user forms styles */
+#register-user {
+  width: 40%;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#register-user-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#register-user-form label {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: left;
+  max-width: var(--card-max-width);
+}
+
+#register-user-form textarea, 
+#register-user-form select {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1.6rem;
+  width: 100%;
+  max-width: var(--card-max-width);
+}
+
+#register-user-form button {
+  background-color: var(--header-bg-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  align-self: flex-start;
+  max-width: var(--card-max-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#register-user-form button:hover {
+  background-color: var(--nav-item-link-hover);
+}
+
 /* Footer styles */
 .footer {
   background-color: var(--header-bg-color);
