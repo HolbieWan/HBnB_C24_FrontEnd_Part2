@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const jwtToken = getCookie('jwt_token');
 
     if (jwtToken) {
+        const registerLink = document.createElement("li");
+        registerLink.classList.add("nav-item");
+        registerLink.innerHTML ='<a href="/HBnB/register" class="nav-link">Sign-in</a>';
+        navMenu.appendChild(registerLink);
+
         const logoutLink = document.createElement('li');
         logoutLink.classList.add('nav-item');
         logoutLink.innerHTML = '<a href="#" class="nav-link" id="logout-button">Logout</a>';

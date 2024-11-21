@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!token) {
             console.error('Token is missing');
-            window.location.href = '/login';
+            alert('Please log in as admin to register a new user.')
+            window.location.href = '/HBnB/login';
             return;
         }
 
@@ -24,6 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const last_name = document.getElementById("user_last_name").value;
         const email = document.getElementById("user_email").value;
         const password = document.getElementById("user_password").value;
+        const confirm_password = document.getElementById("confirm_user_password").value;
+
+        if (password === confirm_password) {
+            console.log("Passwords match ok");
+        } else {
+            console.error("Passwords do not match!");
+            alert('Second password does not match !');
+            window.location.href = "/HBnB/register";
+            return;
+        }
 
         const userData = {
             first_name: first_name,

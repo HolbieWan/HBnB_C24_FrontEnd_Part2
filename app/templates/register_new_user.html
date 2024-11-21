@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Details</title>
+    <title>Sign-in</title>
     <link rel="stylesheet" href="/static/styles.css">
     <link rel="icon" type="image/png" href="/static/images/icon.png">
 </head>
@@ -16,19 +16,19 @@
               <form id="register-user-form">
                 <!-- Username Field -->
                 <label for="user_first_name">First-name:</label>
-                <textarea id="user_first_name" name="user_first_name_text" required></textarea>
+                <input type="text" id="user_first_name" name="user_first_name_text" required></input>
                 <!-- User last-name Field -->
                 <label for="user_last_name">Last-name:</label>
-                <textarea id="user_last_name" name="user_last_name_text" required></textarea>
+                <input type="text" id="user_last_name" name="user_last_name_text" required></inp>
                 <!-- Email Field -->
                 <label for="user_email">Email:</label>
-                <textarea id="user_email" name="user_email_text" required></textarea>
+                <input type="email" id="user_email" name="user_email_text" required></input>
                 <!-- Password Field -->
                 <label for="user_password">Password:</label>
-                <textarea id="user_password" name="user_password_text" required></textarea>
+                <input type="password" id="user_password" name="user_password_text" required></input>
                 <!-- Confirm Password Field -->
                 <label for="confirm_user_password">Confirm Password:</label>
-                <textarea id="confirm_user_password" name="confirm_password_text" required></textarea>
+                <input type="password" id="confirm_user_password" name="confirm_password_text" required></input>
 
                 <button type="submit">Submit</button>
               </form>

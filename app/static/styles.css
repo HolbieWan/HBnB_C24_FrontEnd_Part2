@@ -651,7 +651,7 @@ a:active {
   max-width: var(--card-max-width);
 }
 
-#login-form textarea, 
+#login-form input, 
 #login-form select {
   margin-bottom: 1rem;
   padding: 0.5rem;
@@ -749,7 +749,7 @@ a:active {
   max-width: var(--card-max-width);
 }
 
-#register-user-form textarea, 
+#register-user-form input, 
 #register-user-form select {
   margin-bottom: 1rem;
   padding: 0.5rem;
