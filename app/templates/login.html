@@ -10,16 +10,18 @@
 <body>
   {% include 'header.html' %}
   <main>
-      <form id="login-form">
-          <h2>Login</h2>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-          
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required>
-          
-          <button type="submit">Login</button>
-      </form>
+      <div class="vertical-align">
+          <section id="login">
+            <h2>Login</h2>
+            <form id="login-form">
+              <label for="email">Email:</label>
+              <textarea type="email" id="email" name="email" required></textarea>
+              <label for="password">Password:</label>
+              <textarea type="password" id="password" name="password" required></textarea>
+              <button type="submit">Login</button>
+            </form>
+          </section>
+      </div>
   </main>
   {% include 'footer.html' %}
   <script src="/static/auth_links.js"></script>
