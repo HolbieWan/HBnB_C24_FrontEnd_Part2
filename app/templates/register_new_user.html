@@ -15,20 +15,20 @@
               <h2>Create new account</h2>
               <form id="register-user-form">
                 <!-- Username Field -->
-                <label for="username">User first-name:</label>
-                <textarea id="user-first-name-text" name="user-first-name-text" required></textarea>
+                <label for="user_first_name">First-name:</label>
+                <textarea id="user_first_name" name="user_first_name_text" required></textarea>
                 <!-- User last-name Field -->
-                <label for="username">User last-name:</label>
-                <textarea id="user-last-name-text" name="user-last-name-text" required></textarea>
+                <label for="user_last_name">Last-name:</label>
+                <textarea id="user_last_name" name="user_last_name_text" required></textarea>
                 <!-- Email Field -->
-                <label for="email">Email:</label>
-                <textarea id="email-text" name="email-text" required></textarea>
+                <label for="user_email">Email:</label>
+                <textarea id="user_email" name="user_email_text" required></textarea>
                 <!-- Password Field -->
-                <label for="password">Password:</label>
-                <textarea id="password-text" name="password-text" required></textarea>
+                <label for="user_password">Password:</label>
+                <textarea id="user_password" name="user_password_text" required></textarea>
                 <!-- Confirm Password Field -->
-                <label for="confirm_password">Confirm Password:</label>
-                <textarea id="confirm-password-text" name="confirm-password-text" required></textarea>
+                <label for="confirm_user_password">Confirm Password:</label>
+                <textarea id="confirm_user_password" name="confirm_password_text" required></textarea>
 
                 <button type="submit">Submit</button>
               </form>
@@ -37,5 +37,6 @@
   </main>
   {% include 'footer.html' %}
   <script src="/static/auth_links.js"></script>
+  <script src="/static/register_user.js"></script>
 </body>
 </html>
