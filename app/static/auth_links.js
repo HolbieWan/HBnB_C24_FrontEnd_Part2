@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
         loginLink.classList.add('nav-item');
         loginLink.innerHTML = '<a href="/HBnB/login" class="nav-link">Login</a>';
         navMenu.appendChild(loginLink);
+
+        const registerLink = document.createElement("li");
+        registerLink.classList.add("nav-item");
+        registerLink.innerHTML = '<a href="/HBnB/register" class="nav-link">Sign-in</a>';
+        navMenu.appendChild(registerLink);
     }
 });
 
