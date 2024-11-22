@@ -19,10 +19,10 @@ def home_place():
 def home_login():
     return render_template('login.html', current_page='login')
 
-# @home_bp.route('/add_review')
-# def home_add_review():
-#     return render_template('add_review.html', current_page='add-review')
-
-@home_bp.route('/register')
+@home_bp.route('/register_user')
 def home_register_new_user():
-    return render_template('register_new_user.html', current_page='register')
+    return render_template('register_new_user.html', current_page='register_user')
+
+@home_bp.route('/register_place')
+def home_my_places():
+    return render_template('register_new_place.html', current_page='register-place')

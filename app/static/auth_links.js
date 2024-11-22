@@ -3,10 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const jwtToken = getCookie('jwt_token');
 
     if (jwtToken) {
-        const registerLink = document.createElement("li");
-        registerLink.classList.add("nav-item");
-        registerLink.innerHTML ='<a href="/HBnB/register" class="nav-link">Sign-in</a>';
-        navMenu.appendChild(registerLink);
+        const registerPlaceLink = document.createElement("li");
+        registerPlaceLink.classList.add("nav-item");
+        registerPlaceLink.innerHTML = '<a href="/HBnB/register_place" class="nav-link">Add_place</a>';
+        navMenu.appendChild(registerPlaceLink);
+
+        const registerUserLink = document.createElement("li");
+        registerUserLink.classList.add("nav-item");
+        registerUserLink.innerHTML = '<a href="/HBnB/register_user" class="nav-link">Add_user</a>';
+        navMenu.appendChild(registerUserLink);
 
         const logoutLink = document.createElement('li');
         logoutLink.classList.add('nav-item');
@@ -21,11 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         loginLink.classList.add('nav-item');
         loginLink.innerHTML = '<a href="/HBnB/login" class="nav-link">Login</a>';
         navMenu.appendChild(loginLink);
-
-        const registerLink = document.createElement("li");
-        registerLink.classList.add("nav-item");
-        registerLink.innerHTML = '<a href="/HBnB/register" class="nav-link">Sign-in</a>';
-        navMenu.appendChild(registerLink);
     }
 });
 
