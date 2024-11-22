@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
         registerUserLink.innerHTML = '<a href="/HBnB/register_user" class="nav-link">Add_user</a>';
         navMenu.appendChild(registerUserLink);
 
+        const userId = getCookie("user_id");
+        if (userId) {
+          const userPlacesLink = document.createElement("li");
+          userPlacesLink.classList.add("nav-item");
+          userPlacesLink.innerHTML = `<a href="/HBnB/${userId}/places" class="nav-link">My_places</a>`;
+          navMenu.appendChild(userPlacesLink);
+        }
+
         const logoutLink = document.createElement('li');
         logoutLink.classList.add('nav-item');
         logoutLink.innerHTML = '<a href="#" class="nav-link" id="logout-button">Logout</a>';
