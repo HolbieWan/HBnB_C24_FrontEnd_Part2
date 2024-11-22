@@ -178,3 +178,29 @@ class UserResource(Resource):
 
         facade.delete_user(user_id)
         return {'message': f'User {user_id} deleted successfully'}, 200
+
+
+@api.route('/<user_id>/places')
+class UserPlacesResource(Resource):
+    @api.response(200, 'List of places retrieved successfully')
+    @api.response(404, 'User not found')
+    def get(self, user_id):
+        """Get all places for a user"""
+        facade = current_app.extensions['FACADE']
+        places = facade.get_all_places()
+        place_list = []
+        for place in places:
+            if place.owner_id == user_id:
+                place_list.append({
+                'id': place.id,
+                'title': place.title,
+                'description': place.description,
+                'price': place.price,
+                'latitude': place.latitude,
+                'longitude': place.longitude,
+                'owner_id': place.owner_id,
+                'owner': user_id,
+                'amenities': place.amenities
+                })
+        
+        return place_list, 200
