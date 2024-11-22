@@ -1,7 +1,7 @@
 from flask import current_app, jsonify
 from flask_restx import Namespace, Resource, fields
 from flask_jwt_extended import create_access_token, jwt_required # type: ignore
-
+from datetime import timedelta
 
 
 api = Namespace('auth', description='Authentication operations')
@@ -32,7 +32,7 @@ class Login(Resource):
         if not user or not user.verify_password(credentials['password']):
             return {'error': 'Invalid credentials'}, 401
 
-        access_token = create_access_token(identity={'id': str(user.id), 'is_admin': user.is_admin})
+        access_token = create_access_token(identity={'id': str(user.id), 'is_admin': user.is_admin}, expires_delta=timedelta(days=1))
         
         return {
             'access_token': access_token,

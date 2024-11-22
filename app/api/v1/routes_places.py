@@ -73,8 +73,6 @@ class PlaceList(Resource):
         except ValueError as e:
             return {'error': str(e)}, 400
 
-        new_place.amenities = amenity_ids
-
         return {
             'id': new_place.id,
             'title': new_place.title,

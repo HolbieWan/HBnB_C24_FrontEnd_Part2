@@ -24,5 +24,5 @@ def home_register_new_user():
     return render_template('register_new_user.html', current_page='register_user')
 
 @home_bp.route('/register_place')
-def home_my_places():
+def home_register_new_place():
     return render_template('register_new_place.html', current_page='register-place')
