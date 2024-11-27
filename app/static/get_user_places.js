@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateButton.textContent = "Update place";
       updateButton.classList.add("update-button");
       updateButton.addEventListener("click", function () {
-        window.location.href = `/HBnB/place?id=${place.id}/update`;
+        window.location.href = `/HBnB/places/${place.id}/update_place`;
       });
 
       const deleteButton = document.createElement("button");

@@ -30,3 +30,7 @@ def home_register_new_place():
 @home_bp.route('/<user_id>/places')
 def home_user_places(user_id):
     return render_template('user_places.html', current_page='user_places')
+
+@home_bp.route('/places/<place_id>/update_place')
+def home_update_place(place_id):
+    return render_template('update_place.html', current_page='update_place')
