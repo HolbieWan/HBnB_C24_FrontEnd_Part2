@@ -107,7 +107,16 @@ document.addEventListener("DOMContentLoaded", function () {
       deleteButton.textContent = "Delete place";
       deleteButton.classList.add("delete-place-button");
       deleteButton.addEventListener("click", function () {
-        deletePlace(place.id)
+        const userChoice = confirm(
+          "Are you sure you want to delete this place?"
+        );
+        if (userChoice) {
+          console.log("User chose OK");
+          deletePlace(place.id);
+        } else {
+          console.log("User chose Cancel");
+        }
+        
         window.location.href = `/HBnB/${userId}/places`;
       });
 
