@@ -20,10 +20,21 @@
                   <!-- Place cards will be dynamically populated here -->
               </section>
           </div>
+          <div class="vertical-align">
+            <section id="reviews" class="review-card">
+                <header class="section-header">
+                    <h2 class="section-title">Your reviews</h2>
+                </header>
+                <div id="review-list">
+                    <!-- Reviews will be populated here -->
+                </div>
+            </section>
+          </div>
       </section>
   </main>
   {% include 'footer.html' %}
   <script src="/static/get_user_places.js"></script>
+  <script src="/static/get_user_reviews.js"></script>
   <script src="/static/auth_links.js"></script>
 </body>
 </html>

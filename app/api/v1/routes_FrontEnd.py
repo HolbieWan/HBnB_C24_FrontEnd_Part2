@@ -34,3 +34,7 @@ def home_user_places(user_id):
 @home_bp.route('/places/<place_id>/update_place')
 def home_update_place(place_id):
     return render_template('update_place.html', current_page='update_place')
+
+@home_bp.route('/reviews/<place_id>/<review_id>/update_review')
+def home_update_review(place_id, review_id):
+    return render_template('update_review.html', current_page='update_review')

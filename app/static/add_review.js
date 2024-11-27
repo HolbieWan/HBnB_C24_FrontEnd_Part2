@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         const token = getCookie('jwt_token');
-        const userId = getCookie('user_id');  // Get the user_id from the cookie
-
+        const userId = getCookie('user_id');
         if (!token) {
             console.error('User is not logged in');
             window.location.href = '/login';
@@ -31,14 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const reviewData = {
-          user_id: userId, // Use the user_id from the cookie
+          user_id: userId,
           text: reviewText.value,
           rating: parseInt(reviewRating.value, 10),
           place_id: placeId,
         };
 
-        console.log('Submitting review data:', reviewData);  // Debugging log
-        console.log('JWT token:', token);  // Debugging log
+        console.log('Submitting review data:', reviewData);  // Debug log
+        console.log('JWT token:', token);  // Debug log
 
         try {
             const response = await fetch(`/api/v1/reviews/`, {
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(reviewData)
             });
 
-            console.log('Submit review response status:', response.status);  // Debugging log
+            console.log('Submit review response status:', response.status);  // Debug log
 
             if (!response.ok) {
                 const errorText = await response.text();
@@ -61,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const newReview = await response.json();
             console.log('Review submitted:', newReview);
 
-            // Optionally, you can re-fetch reviews and update the review list
             fetchReviews();
 
             // Clear the form
