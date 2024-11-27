@@ -186,7 +186,7 @@ class PlaceResource(Resource):
     
     @api.response(200, 'Place deleted successfully')
     @api.response(404, 'Place not found')
-    @api.doc('update_user', params=auth_header)
+    @api.doc('delete_place', params=auth_header)
     @jwt_required()
     def delete(self, place_id):
         """Delete a place"""

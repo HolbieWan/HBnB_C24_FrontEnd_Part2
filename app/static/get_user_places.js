@@ -40,8 +40,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Function to delete a place
+  async function deletePlace(placeID) {
+    const token = getCookie("jwt_token");
+
+    if (!placeID) {
+      console.error("Place ID is missing");
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/v1/places/${placeID}`, {
+        method: "DELETE",
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+
+      console.log("Place delete response status:", response.status); // Debug log
+
+      if (!response.ok) {
+        console.error("Failed to delete place");
+        return;
+      }
+
+    } catch (error) {
+      console.error("Error deleting place:", error);
+    }
+  }
+
   // Function to render places
   function renderPlaces(places) {
+    const userId = getCookie("user_id");
     placesList.innerHTML = "";
     places.forEach((place) => {
       const placeCard = document.createElement("div");
@@ -68,11 +96,28 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = `/HBnB/place?id=${place.id}`;
       });
 
+      const updateButton = document.createElement("button");
+      updateButton.textContent = "Update place";
+      updateButton.classList.add("update-button");
+      updateButton.addEventListener("click", function () {
+        window.location.href = `/HBnB/place?id=${place.id}/update`;
+      });
+
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete place";
+      deleteButton.classList.add("delete-place-button");
+      deleteButton.addEventListener("click", function () {
+        deletePlace(place.id)
+        window.location.href = `/HBnB/${userId}/places`;
+      });
+
       placeCard.appendChild(placeTitle);
       placeCard.appendChild(placeImage);
       placeCard.appendChild(placePrice);
       placeCard.appendChild(placeLocation);
       placeCard.appendChild(detailsButton);
+      placeCard.appendChild(updateButton);
+      placeCard.appendChild(deleteButton);
 
       placesList.appendChild(placeCard);
     });
