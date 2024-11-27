@@ -532,6 +532,7 @@ a:active {
 .section-title {
   font-size: 2.4rem;
   color: var(--color-black);
+  text-align: center;
 }
 
 /* Filter styles */
@@ -545,12 +546,26 @@ a:active {
   font-size: 1.6rem;
 }
 
+/* Background card styles */
+.background-card {
+  margin: var(--card-margin);
+  padding: var(--card-padding);
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--color-white);
+  text-align: left;
+  max-width: var(--card-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Place card styles */
 #places-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .place-card {
@@ -650,7 +665,7 @@ a:active {
 #reviews {
   width: 100%;
   margin: 2rem 0;
-  text-align: left;
+  text-align: center;
 }
 
 .review-card {
