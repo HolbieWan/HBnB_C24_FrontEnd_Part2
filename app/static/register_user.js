@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const register_form = document.getElementById('register-user-form');
+    const jwtToken = getCookie("jwt_token");
+    const parsedToken = parseJwt(jwtToken);
 
     function getCookie(name) {
         const value = `; ${document.cookie}`;
@@ -8,13 +10,31 @@ document.addEventListener('DOMContentLoaded', function () {
         return null;
     }
 
+    function parseJwt(token) {
+      if (!token) return null; // Handle empty token case
+      try {
+        const base64Url = token.split(".")[1]; // Get the payload part
+        const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+        const jsonPayload = decodeURIComponent(
+          atob(base64)
+            .split("")
+            .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+            .join("")
+        );
+        return JSON.parse(jsonPayload);
+      } catch (e) {
+        console.error("Error parsing JWT:", e);
+        return null;
+      }
+    }
+
     register_form.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         const token = getCookie('jwt_token');
         console.log('Retrieved Token:', token); // Debugging log
 
-        if (!token) {
+        if (!token || !parsedToken.sub.is_admin) {
             console.error('Token is missing');
             alert('Please log in as admin to register a new user.')
             window.location.href = '/HBnB/login';

@@ -541,7 +541,7 @@ a:active {
   text-align: center;
 }
 
-#country-filter {
+#country-filter, #price-filter {
   padding: 0.5rem;
   font-size: 1.6rem;
 }
