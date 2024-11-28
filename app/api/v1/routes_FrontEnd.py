@@ -27,9 +27,9 @@ def home_register_new_user():
 def home_register_new_place():
     return render_template('register_new_place.html', current_page='register-place')
 
-@home_bp.route('/<user_id>/places')
+@home_bp.route('/<user_id>/my_account')
 def home_user_places(user_id):
-    return render_template('user_places.html', current_page='user_places')
+    return render_template('user_account.html', current_page='user_places')
 
 @home_bp.route('/places/<place_id>/update_place')
 def home_update_place(place_id):

@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!response.ok) {
                 const errorText = await response.text();
                 console.error('Failed to submit review:', errorText);
+                alert(`Failed to submit review: ${errorText}`);
                 return;
             }
 
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const reviews = await response.json();
-            console.log('Reviews:', reviews);  // Log the reviews data
+            console.log('Reviews:', reviews); // Debugging log
             renderReviews(reviews);
 
         } catch (error) {
@@ -132,6 +133,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Initial fetch to display current reviews
     fetchReviews();
 });

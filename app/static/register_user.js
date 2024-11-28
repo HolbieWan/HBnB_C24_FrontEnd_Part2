@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function parseJwt(token) {
-      if (!token) return null; // Handle empty token case
+      if (!token) return null;
       try {
         const base64Url = token.split(".")[1]; // Get the payload part
         const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const user_data = await response.json();
             console.log('User registered successfully:', user_data);
+            alert(`New-user: ${user_data.first_name} ${user_data.last_name} registered successfully!\n You can log in with your credentials now`);
 
             // Redirect to the login page
             window.location.href = '/HBnB/login';

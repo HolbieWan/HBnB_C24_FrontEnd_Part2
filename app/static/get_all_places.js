@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Fetch places if the user is logged in
     fetchPlaces();
 
     // Expose the renderPlaces function globally

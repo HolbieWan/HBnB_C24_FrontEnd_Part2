@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             const placeDetails = await response.json();
-            console.log('Place details:', placeDetails);  // Log the place details data
+            console.log('Place details:', placeDetails);  // Debugg log
             renderPlaceDetails(placeDetails);
 
         } catch (error) {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         placeCard.classList.add('place-details-card');
 
         const placeImage = document.createElement('img');
-        placeImage.src = place.image_url || `/static/images/beach-house.jpeg`; // Change this to place.image_url if available
+        placeImage.src = place.image_url || `/static/images/beach-house.jpeg`;
         placeImage.alt = place.title;
         placeImage.classList.add('place-image-large');
 
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Fetch place details and reviews if the user is logged in
+    // Fetch place details and reviews, shows add_review form if the user is logged in
     fetchPlaceDetails();
     fetchReviews();
     checkAuthentication();

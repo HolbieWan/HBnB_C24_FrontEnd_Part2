@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
       place_id: placeId,
     };
 
-    console.log("Submitting review data:", reviewData); // Debugging log
-    console.log("JWT token:", token); // Debugging log
+    console.log("Submitting review data:", reviewData); // Debug log
+    console.log("JWT token:", token); // Debug log
 
     try {
       const response = await fetch(`/api/v1/reviews/${reviewId}`, {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify(reviewData),
       });
 
-      console.log("Submit review response status:", response.status); // Debugging log
+      console.log("Submit review response status:", response.status); // Debug log
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -83,9 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // Clear the form
       reviewText.value = "";
       reviewRating.value = "";
-      
-      window.location.href = `/HBnB/${userId}/places`;
-      
+
+      // Redirect to my_account page
+      window.location.href = `/HBnB/${userId}/my_account`;
+
     } catch (error) {
       console.error("Error updating review:", error);
     }

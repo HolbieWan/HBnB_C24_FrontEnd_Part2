@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       amenities: amenities,
     };
 
-    console.log("Submitting place data:", placeData); // Debugging log
+    console.log("Submitting place data:", placeData); // Debug log
     console.log("Final Payload Sent:", JSON.stringify(placeData, null, 2));
 
     try {
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify(placeData),
       });
 
-      console.log("Register place response status:", response.status); // Debugging log
+      console.log("Register place response status:", response.status); // Debug log
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -88,7 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const user_data = await response.json();
       console.log("Place updated successfully:", user_data);
 
-      window.location.href = `/HBnB/${userId}/places`;
+      // Redirect to my_account page
+      window.location.href = `/HBnB/${userId}/my_account`;
+      
     } catch (error) {
       console.error("Error during registration:", error);
     }

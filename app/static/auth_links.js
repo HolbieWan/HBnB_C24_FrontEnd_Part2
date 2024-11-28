@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log("User ID:", userId); // Debugging log
       const userPlacesLink = document.createElement("li");
       userPlacesLink.classList.add("nav-item");
-      userPlacesLink.innerHTML = `<a href="/HBnB/${userId}/places" class="nav-link">My_account</a>`;
+      userPlacesLink.innerHTML = `<a href="/HBnB/${userId}/my_account" class="nav-link">My_account</a>`;
       navMenu.appendChild(userPlacesLink);
     }
 
@@ -57,7 +57,7 @@ function getCookie(name) {
 }
 
 function parseJwt(token) {
-  if (!token) return null; // Handle empty token case
+  if (!token) return null;
   try {
     const base64Url = token.split(".")[1]; // Get the payload part
     const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");

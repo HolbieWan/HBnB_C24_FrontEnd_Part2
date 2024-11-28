@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Store the token and user ID in cookies
             document.cookie = `jwt_token=${token}; path=/HBnB; secure; SameSite=Strict`;
-            document.cookie = `user_id=${userId}; path=/HBnB; secure; SameSite=Strict`;  // Set user_id in cookie
+            document.cookie = `user_id=${userId}; path=/HBnB; secure; SameSite=Strict`;
 
             // Redirect to the home page
             window.location.href = '/HBnB';

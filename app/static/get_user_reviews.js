@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
               console.log("User chose Cancel");
             }
 
-            window.location.href = `/HBnB/${userId}/places`;
+            window.location.href = `/HBnB/${userId}/my_account`;
           });
 
           reviewCard.appendChild(reviewerName);

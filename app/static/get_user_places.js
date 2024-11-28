@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const placesList = document.getElementById("places-list");
 
-  // Store places globally so they can be accessed by filter_by_country.js
   window.allUserPlaces = [];
 
   // Function to get a cookie by name
@@ -34,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Fetched places:", places); // Debug log
       window.allUserPlaces = places;
       renderPlaces(places);
+
     } catch (error) {
       console.error("Error fetching places:", error);
       alert("User not logged in. Please go to login page.");
@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Fetch places if the user is logged in
   fetchPlaces();
 
   // Expose the renderPlaces function globally
