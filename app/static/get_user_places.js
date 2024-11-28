@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!response.ok) {
         console.error("Failed to delete place");
+        alert("Failed to delete place:", error);
         return;
       }
 
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const updateButton = document.createElement("button");
       updateButton.textContent = "Update place";
-      updateButton.classList.add("update-button");
+      updateButton.classList.add("update-place-button");
       updateButton.addEventListener("click", function () {
         window.location.href = `/HBnB/places/${place.id}/update_place`;
       });
@@ -117,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log("User chose Cancel");
         }
         
-        window.location.href = `/HBnB/${userId}/places`;
+        window.location.href = `/HBnB/${userId}/my_account`;
       });
 
       placeCard.appendChild(placeTitle);

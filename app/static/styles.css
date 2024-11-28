@@ -382,6 +382,12 @@
   --card-border-radius: 10px;
   --card-max-width: 800px; /* Adjusted to a smaller max-width */
   --background-color-main: #f0f0f0;
+  --normal-button-color:rgb(0, 166, 255);
+  --update-button-color:rgb(0, 119, 255);
+  --delete-button-color:rgb(255, 0, 0);
+  --normal-button-hoover-color:rgba(0, 166, 255, 0.5);
+  --update-button-hover-color:rgba(0, 119, 255, 0.5);
+  --delete-button-hover-color:rgba(255, 0, 0, 0.5);
 }
 
 /* Light theme */
@@ -588,7 +594,7 @@ a:active {
 .details-button {
   display: block;
   width: 100%;
-  background-color: var(--header-bg-color);
+  background-color: var(--normal-button-color);
   color: var(--color-white);
   border: none;
   border-radius: 5px;
@@ -599,13 +605,13 @@ a:active {
 }
 
 .details-button:hover {
-  background-color: var(--nav-item-link-hover);
+  background-color: var(--normal-button-hoover-color);
 }
 
-.update-button {
+.update-place-button {
   display: block;
   width: 100%;
-  background-color: rgb(73, 236, 165);
+  background-color: var(--update-button-color);
   color: var(--color-white);
   border: none;
   border-radius: 5px;
@@ -615,14 +621,14 @@ a:active {
   margin-bottom: 10px;
 }
 
-.update-button:hover {
-  background-color: var(--nav-item-link-hover);
+.update-place-button:hover {
+  background-color: var(--update-button-hover-color);
 }
 
 .delete-place-button {
   display: block;
   width: 100%;
-  background-color: rgb(239, 57, 57);
+  background-color: var(--delete-button-color);
   color: var(--color-white);
   border: none;
   border-radius: 5px;
@@ -632,7 +638,7 @@ a:active {
 }
 
 .delete-place-button:hover {
-  background-color: var(--nav-item-link-hover);
+  background-color: var(--delete-button-hover-color);
 }
 
 /* Place details styles */
@@ -679,6 +685,92 @@ a:active {
   max-width: var(--card-max-width);
   margin-left: auto;
   margin-right: auto;
+}
+
+/* User_Account styles*/
+#user_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.update-account-button {
+  display: block;
+  width: 60%;
+  background-color: var(--update-button-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.update-account-button:hover {
+  background-color: var(--update-button-hover-color);
+}
+
+.delete-account-button {
+  display: block;
+  width: 60%;
+  background-color: var(--delete-button-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.delete-account-button:hover {
+  background-color: var(--delete-button-hover-color);
+}
+
+/* User_reviews styles*/
+#review_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.update-review-button {
+  display: block;
+  width: 100%;
+  background-color: var(--update-button-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.update-review-button:hover {
+  background-color: var(--update-button-hover-color);
+}
+
+.delete-review-button {
+  display: block;
+  width: 100%;
+  background-color: var(--delete-button-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.delete-review-button:hover {
+  background-color: var(--delete-button-hover-color);
 }
 
 /* Login form styles */

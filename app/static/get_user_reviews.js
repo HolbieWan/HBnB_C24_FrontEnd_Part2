@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const reviewListSection = document.getElementById("review-list");
+  const reviewListSection = document.getElementById("review_list");
 
   // Function to get a cookie by name
   function getCookie(name) {
@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
           const updateButton = document.createElement("button");
           updateButton.textContent = "Update review";
-          updateButton.classList.add("update-button");
+          updateButton.classList.add("update-review-button");
           updateButton.addEventListener("click", function () {
             window.location.href = `/HBnB/reviews/${review.place_id}/${review.id}/update_review`;
           });
 
           const deleteButton = document.createElement("button");
           deleteButton.textContent = "Delete review";
-          deleteButton.classList.add("delete-place-button");
+          deleteButton.classList.add("delete-review-button");
           deleteButton.addEventListener("click", function () {
             const userChoice = confirm(
               "Are you sure you want to delete this review?"

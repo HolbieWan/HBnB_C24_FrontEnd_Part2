@@ -11,6 +11,13 @@
   {% include 'header.html' %}
   <main>
       <section id="Places" class="section">
+          <div id="user_buttons" class="background-card">
+            <header class="section-header">
+                  <h2 class="section-title">Your account</h2>
+            </header>
+            <button type="submit" id="update-account-button" class="update-account-button">Update your datas</button>
+            <button type="submit" id="delete-account-button" class="delete-account-button">Delete your account</button>
+          </div>
           <div class="background-card">
               <header class="section-header">
                   <h2 class="section-title">Your places</h2>
@@ -25,7 +32,7 @@
                 <header class="section-header">
                     <h2 class="section-title">Your reviews</h2>
                 </header>
-                <div id="review-list">
+                <div id="review_list">
                     <!-- Reviews will be populated here -->
                 </div>
             </section>
@@ -35,6 +42,12 @@
   {% include 'footer.html' %}
   <script src="/static/get_user_places.js"></script>
   <script src="/static/get_user_reviews.js"></script>
+  <script src="/static/delete_user_account.js"></script>
+  <script>
+    document.getElementById("update-account-button").addEventListener("click", function () {
+        window.location.href = "/HBnB/update_user_datas";
+    });
+  </script>
   <script src="/static/auth_links.js"></script>
 </body>
 </html>
